@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<p>Even numbers in 10:</p>
+    <script>
+        let output = document.querySelector("p");
+        let even = document.createElement("p");   
+        // create loop for even/odd num seperator.
+        let divisor = 0;
+        while(++divisor <= 10 ){
+            if(divisor % 2 != 0){
+                continue;
+            }
+            else{
+                if(divisor ===2){
+                    even.append(`[${divisor}, `)
+                }
+                else if (divisor <10){
+                even.append(`${divisor}, `);
+                }
+                else{
+                    even.append(`${divisor}]`)
+                }
+                // compiles even number array
+            }
+        }  
+        
+        output.appendChild(even);
+
+    </script>
+</body>
+</html>

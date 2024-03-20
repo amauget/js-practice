@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    
+    // userGuess(input);
+    
+    const randNum = RandomNum();
+    let input = userGuess();
+    GuessNum(randNum, input);
+    
+
+    
+    function RandomNum(){
+        let randNum = (Math.floor((Math.random()+ .01)* 100));
+        //add .01 because .random() only randomizes to .999999. Math.floor will round down.
+        return randNum;
+    }
+    
+    function userGuess(){
+        let input = false;
+        // loop condition
+        while(input === false){
+            let input = prompt("Guess a number between 0 - 100, using integer format: ");
+            
+            if ((0 < input ) && (input<= 100)){
+                
+                const validNumber = parseInt(input);
+                console.log(typeof(validNumber));
+
+                return validNumber;
+                // makes input condition "true"
+                
+                
+            }
+            else{
+                alert("Invalid entry. Be sure to follow the directions.");
+            }
+        }
+    }
+
+    function GuessNum(randNum, input){
+        while(true){
+            
+            if (input < randNum){
+                alert("Too low!");
+                input = userGuess();
+                // Updates input value AND calls executes the function
+                
+                
+            }
+            else if(input > randNum){
+                alert("Too high!");
+                input = userGuess();
+            }
+            else{
+                alert("You got it!");
+                break;
+                
+            }
+        }
+    }
+    </script>
+</body>
+</html>

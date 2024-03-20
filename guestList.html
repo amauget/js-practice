@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Live Output</h2>
+    <div class="output"></div>
+    <p class="admitted">Admit: </p>
+    <p class="refused">Refuse: </p>
+
+    
+
+    <!-- Write a loop that will iterate through the people array.
+
+During each loop iteration, check if the current array item is equal 
+to "Phil" or "Lola" using a conditional statement:
+
+If it is, concatenate the array item to the end of the refused paragraph's textContent, followed by a comma and a space.
+If it isn't, concatenate the array item to the end of the admitted paragraph's textContent, followed by a comma and a space. -->
+
+<script>
+const people = ['Chris', 'Anne', 'Colin', 'Terri', 'Phil', 'Lola', 'Sam', 'Kay', 'Bruce'];
+
+const admitted = document.querySelector('.admitted');
+const refused = document.querySelector('.refused');
+admitted.textContent = 'Admit: ';
+refused.textContent = 'Refuse: ';
+
+let guests = document.createElement("p")
+let others = document.createElement("p")
+// Creates new paragraph elements where distinguishing element can be placed
+
+guests = "";
+others = "";
+
+
+
+for(i=0; i < people.length -1; i++){
+    if (people[i] === "Phil"){
+        guests += `${people[i]}, `;
+    }
+    else if(people[i] === "Lola"){
+        guests += `${people[i]}, `;
+    } 
+
+    else{
+         others += `${people[i]}, `
+        
+    }
+    
+}
+admitted.append(guests);
+refused.append(others);
+// appends new elements with established page elements for viewing
+
+
+
+// loop starts here
+
+// refused.textContent += ;
+// admitted.textContent += ;
+
+
+</script>
+</body>
+</html>

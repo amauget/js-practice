@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p1 class="title"> Launch Timer!</p1>
+    <button>Press to start Countdown</button>
+    <p class="output"> </p>
+
+    <script>
+        const btn = document.querySelector("button");
+        const output = document.querySelector("p");
+
+        btn.addEventListener("click",()=>{
+            output.textContent = "";
+
+            for(let i = 11; i > 0, i--;) {
+                
+                loop(i);
+                
+                }
+
+            function loop(i){
+            setTimeout(function(){
+                const numbers = document.createElement("p");
+                if (i>0){
+                    numbers.textContent = `${i}`
+                }
+                else{
+                    numbers.textContent = `Blast off!`
+                }
+                output.appendChild(numbers);
+            }, 1000 * (10 - i));
+            } 
+                    })
+               
+    </script>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .title{
+            font-weight: 900;
+            font-size: xx-large;
+        }
+        
+        p{
+            font-weight: bold;
+            font-size: x-large;
+            text-align: center;
+        }
+        button{
+            width: 200px;
+            margin: 30px;
+        }
+    </style>
+</body>
+</html>
